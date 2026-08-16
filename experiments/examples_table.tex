@@ -1,0 +1,20 @@
+\begin{table}[h]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llp{3.1cm}p{3.1cm}@{}}
+\toprule
+\textbf{Type} & \textbf{gold/pred} & \textbf{quoted span} & \textbf{nearest source} \\
+\midrule
+Ayah & incorrect/correct & \ar{وَقَالَ رَبُّكُمْ ادْعُونِي أَسْتَجِبْ لَكُمْ} & \ar{وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ ۚ إِنَّ اldots} \\
+\addlinespace[2pt]
+matn & correct/incorrect & \ar{إن الله يرضى لكم ثلاثًا: أن تعبدوه ولا تشركوا به شيئًا،ldots} & \ar{إِنَّ اللهَ يَرْضَى لَكُمْ ثَلَاثًا ، وَيَكْرَهُ لَكُمْldots} \\
+\addlinespace[2pt]
+isnad & correct/incorrect & \ar{عن علي رضي الله عنه قال:} & \ar{كُنْتُ رَجُلًا مَذَّاءً ، وَكُنْتُ أَسْتَحْيِي أَنْ أَسldots} \\
+\addlinespace[2pt]
+claimed src & incorrect/correct & \ar{السورة 3، آية 139} & \ar{فَإِذَا بَلَغْنَ أَجَلَهُنَّ فَأَمْسِكُوهُنَّ بِمَعْرُوldots} \\
+\addlinespace[2pt]
+\bottomrule
+\end{tabular}
+\caption{Representative development misclassifications, one per segment type.}
+\label{tab:errors}
+\end{table}

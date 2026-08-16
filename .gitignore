@@ -1,0 +1,15 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+paper/p1.txt
+paper/p2.txt
+paper/p3.txt
+paper/b1.txt
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
