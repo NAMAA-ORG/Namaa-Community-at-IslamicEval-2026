@@ -29,13 +29,13 @@ rule-based detection tops out ~35% (our 2025 Database-Lookup ablation) to ~67% (
 | 2026 subtask | 2025 equivalent | 2025 best | Our current dev |
 |---|---|---|---|
 | **Task 1** — span detection (Ayah/matn/isnad/claimed_source) | Subtask 1A (Ayah/Hadith only) | 90.06 F1 (Burhan, agentic LLM) | **~0.48** char-F1 |
-| **Task 2** — verification correct/incorrect | Subtask 1B (validation) | **89.82 acc** (TCE) | **0.841** macro |
+| **Task 2** — verification correct/incorrect | Subtask 1B (validation) | **89.82 acc** (TCE) | **0.846** macro |
 | **Task 3** — correction | Subtask 1C | 68.18 acc (HUMAIN) | not built |
 | **Task 4** — answer relevance | (new; loosely Task 2 QA) | – | **0.618** F1 |
 
 Caveats: 2026 Task 1 adds **isnad + claimed_source** (2025 was Ayah/Hadith only) → harder. 2026 Task 2
 is **macro over 4 types** (isnad/claimed_source each 25%), whereas 2025 1B accuracy was Ayah/Hadith
-only → our 0.841 is measured on a harder metric than TCE's 0.898.
+only → our 0.846 is measured on a harder metric than TCE's 0.898.
 
 ---
 
@@ -78,7 +78,7 @@ This is exactly the Ayah-strict / matn-fuzzy split we can bake into Task 2.
 
 ## 4. Concrete plan per 2026 task (prioritized by expected gain / effort, CPU-only)
 
-### Task 2 — verification (now 0.841; 2025 analogue hit ~0.90)
+### Task 2 — verification (now 0.846; 2025 analogue hit ~0.90)
 1. **Add exact + normalized-substring cascade before fuzzy** for Ayah (strict) and keep fuzzy for matn
    (paraphrase-tolerant). *(experiment running now.)*
 2. Keep the **isnad grounding** (already +0.045) and tune `topn`.

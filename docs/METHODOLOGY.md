@@ -126,8 +126,8 @@ RAG notebook did) is meaningless and scored only 0.35. Instead we:
 the isnad segment lives in an annotation whose matn matched a specific hadith record, and that record
 carries the *full narration* (`hadithTxt` = chain + matn). We compare the quoted isnad to that full
 narration (max over the parent matn's top-3 matches) and threshold. This separates cleanly — gold-
-correct chains score ~0.84 similarity, gold-incorrect ~0.75 — and lifts isnad **0.53 → 0.70**, macro
-**0.796 → 0.841**. `tau_isnad` is tuned on train (≈0.85). Still improvable with a dedicated narrator
+correct chains score ~0.84 similarity, gold-incorrect ~0.75 — and lifts isnad **0.53 → 0.70**,
+worth about **+0.045 macro**. `tau_isnad` is tuned on train (≈0.85). Still improvable with a dedicated narrator
 DB (see §9).
 
 ---
@@ -140,7 +140,7 @@ thresholds to dev. This keeps the reported dev number an honest estimate of blin
 rather than an over-fit. Because retrieval is precomputed (step 5), the whole grid is re-scored
 instantly.
 
-Chosen values on this data: `tau_ayah ≈ 0.96`, `tau_matn ≈ 0.92`.
+Chosen values on this data: `tau_ayah ≈ 0.98`, `tau_matn ≈ 0.94`, `tau_isnad ≈ 0.85`.
 
 ---
 
@@ -157,8 +157,8 @@ Chosen values on this data: `tau_ayah ≈ 0.96`, `tau_matn ≈ 0.92`.
 
 | metric | v1 | **v2 (current)** |
 |---|---|---|
-| **accuracy (macro)** | 0.796 | **0.841** |
-| accuracy_Ayah | 0.944 | 0.944 |
+| **accuracy (macro)** | 0.796 | **0.845** |
+| accuracy_Ayah | 0.944 | **0.961** |
 | accuracy_matn | 0.901 | 0.913 |
 | accuracy_claimed_source | 0.807 | 0.807 |
 | accuracy_isnad | 0.533 | **0.700** |
